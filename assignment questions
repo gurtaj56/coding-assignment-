@@ -1,0 +1,181 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // question 1: Display Text on the Screen
+        System.out.println("Hello, World!");
+
+        // question 2: Input from User
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        System.out.println("You entered: " + number);
+
+        // question 3: Assignment and Compound Assignment Operator
+        int x = 5;
+        x += 10;
+        System.out.println("Value of x after incrementing by 10: " + x);
+
+        // question 4: Arithmetic Operators
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+        System.out.println("Addition: " + (num1 + num2));
+        System.out.println("Subtraction: " + (num1 - num2));
+        System.out.println("Multiplication: " + (num1 * num2));
+        System.out.println("Division: " + (num1 / num2));
+        System.out.println("Modulus: " + (num1 % num2));
+
+        // question 5: Logical Operators
+        System.out.print("Enter boolean value 1 (true/false): ");
+        boolean bool1 = scanner.nextBoolean();
+        System.out.print("Enter boolean value 2 (true/false): ");
+        boolean bool2 = scanner.nextBoolean();
+        System.out.println("Logical AND: " + (bool1 && bool2));
+        System.out.println("Logical OR: " + (bool1 || bool2));
+        System.out.println("Logical NOT for value 1: " + (!bool1));
+        System.out.println("Logical NOT for value 2: " + (!bool2));
+
+        // question 6: Comparison Operators
+        System.out.print("Enter first number: ");
+        int num3 = scanner.nextInt();
+        System.out.print("Enter second number: ");
+        int num4 = scanner.nextInt();
+        System.out.println(num3 + " > " + num4 + ": " + (num3 > num4));
+        System.out.println(num3 + " < " + num4 + ": " + (num3 < num4));
+        System.out.println(num3 + " == " + num4 + ": " + (num3 == num4));
+        System.out.println(num3 + " != " + num4 + ": " + (num3 != num4));
+
+        // question 7: Even or Odd
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+        if (num % 2 == 0) {
+            System.out.println(num + " is even.");
+        } else {
+            System.out.println(num + " is odd.");
+        }
+
+        // question 8: Greatest of 3 Numbers
+        System.out.print("Enter three numbers: ");
+        int num5 = scanner.nextInt();
+        int num6 = scanner.nextInt();
+        int num7 = scanner.nextInt();
+        int max = (num5 > num6) ? (num5 > num7 ? num5 : num7) : (num6 > num7 ? num6 : num7);
+        System.out.println("The greatest number is: " + max);
+
+        // question 9: Switch Case and ElseIf Ladder
+        System.out.println("Choose an option:");
+        System.out.println("1. Calculator");
+        System.out.println("2. Find Grades");
+        int option = scanner.nextInt();
+        switch (option) {
+            case 1:
+                System.out.println("Calculator selected.");
+                // Implement calculator functionality
+                break;
+            case 2:
+                System.out.println("Find Grades selected.");
+                // Implement find grades functionality
+                break;
+            default:
+                System.out.println("Invalid option selected.");
+        }
+
+        // question 10: Sum of Natural Numbers
+        int sum = 0;
+        for (int i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        System.out.println("Sum of natural numbers from 1 to 100 using for loop: " + sum);
+
+        sum = 0;
+        int j = 1;
+        while (j <= 100) {
+            sum += j;
+            j++;
+        }
+        System.out.println("Sum of natural numbers from 1 to 100 using while loop: " + sum);
+
+        sum = 0;
+        int k = 1;
+        do {
+            sum += k;
+            k++;
+        } while (k <= 100);
+        System.out.println("Sum of natural numbers from 1 to 100 using do-while loop: " + sum);
+
+        // question 11: Printing a Pattern
+        for (int l = 1; l <= 5; l++) {
+            for (int m = 1; m <= 8; m++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // question 12: Printing Odd or Even Numbers
+        System.out.println("Even numbers using for loop:");
+        for (int n = 1; n <= 10; n++) {
+            if (n % 2 == 0) {
+                System.out.print(n + " ");
+            }
+        }
+        System.out.println();
+
+        System.out.println("Odd numbers using while loop:");
+        int p = 1;
+        while (p <= 10) {
+            if (p % 2 != 0) {
+                System.out.print(p + " ");
+            }
+            p++;
+        }
+        System.out.println();
+
+        System.out.println("Even numbers using do-while loop:");
+        int q = 1;
+        do {
+            if (q % 2 == 0) {
+                System.out.print(q + " ");
+            }
+            q++;
+        } while (q <= 10);
+
+        // question 13: Reverse of a Number
+        System.out.print("\nEnter a number to reverse: ");
+        int numToReverse = scanner.nextInt();
+        int reversedNumber = 0;
+        while (numToReverse != 0) {
+            int digit = numToReverse % 10;
+            reversedNumber = reversedNumber * 10 + digit;
+            numToReverse /= 10;
+        }
+        System.out.println("Reversed number: " + reversedNumber);
+
+        // question 14: Number of Days in a Month
+        System.out.print("Enter month number (1-12): ");
+        int month = scanner.nextInt();
+        int days;
+        switch (month) {
+            case 1, 3, 5, 7, 8, 10, 12:
+                days = 31;
+                break;
+            case 4, 6, 9, 11:
+                days = 30;
+                break;
+            case 2:
+                days = 28;
+                break;
+            default:
+                days = -1; // Invalid month
+        }
+        if (days != -1) {
+            System.out.println("Number of days in month " + month + ": " + days);
+        } else {
+            System.out.println("Invalid month number entered.");
+        }
+
+        scanner.close();
+    }
+}
